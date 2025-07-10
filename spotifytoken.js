@@ -27,7 +27,7 @@ class Semaphore {
   }
 
   _release() {
-    const waiter = this._waiters.pop();
+    const waiter = this._waiters.shift();
 
     if (waiter) {
       waiter(this._release.bind(this));
